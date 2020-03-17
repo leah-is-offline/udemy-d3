@@ -4,10 +4,19 @@
 *    2.7 - Loading external data
 */
 
+/**have the file in the same folder.  */
+/**the following line is called a promise
+ * a promise can be...
+ * -filled
+ * -rejected
+ * -pending
+ */
 d3.tsv("data/ages.tsv").then(function(data){
     data.forEach(function(d){
         d.age = +d.age;
-    });
+    }); 
+    /**looping through an array and
+     * converting each age value object to an integer**/
 
     var svg = d3.select("#chart-area").append("svg")
         .attr("width", 400)

@@ -13,12 +13,17 @@ var svg = d3.select("#chart-area").append("svg")
 var circles = svg.selectAll("circle")
     .data(data);
 
+/**multiplying the pixel value by a value to seperate the circles on the screen
+ * remember the first value of i will be 0
+ **/
 circles.enter()
     .append("circle")
         .attr("cx", function(d, i){
             return (i * 50) + 25;
         })
-        .attr("cy", 25)
+        .attr("cy", function(d,i){
+            return (i * 10) + 30;
+        })
         .attr("r", function(d){
             return d;
         })
